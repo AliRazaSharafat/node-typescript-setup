@@ -1,0 +1,34 @@
+npm i express
+npm i -D typescript @types/node @types/express
+npx tsc --init
+npm i -D concurrently nodemon
+npm i -D eslint
+npx eslint --init
+This will ask you a series of questions. For this project we’ll answer the following:
+
+How would you like to use ESLint?: To check syntax and find problems
+What type of modules does your project use?: JavaScript modules (import/export)
+Which framework does your project use?: None of these
+Does your project use TypeScript?: Yes
+Where does your code run?: Node
+What format do you want your config file to be in?: JavaScript
+Finally, you will be prompted to install some additioanl eslint libraries. Choose Yes. The process will finish and you’ll be left with the following configuration file:
+module.exports = {
+  env: {
+    es2021: true,
+    node: true,
+  },
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 13,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint'],
+  rules: {},
+}
+
+
+===================================================================================================================
+npm i -D ts-node    -> This package is used to run typescript directly. It manages to compile ts code to js code and then run js code.
+npx ts-node src/server.ts
